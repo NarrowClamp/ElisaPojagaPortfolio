@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./App.css";
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 function App() {
 
@@ -14,110 +15,102 @@ function App() {
 
   const projects = [
 
-    {
-      image: "/Arcademachine.jpg",
-      title: "Scrumshowdown",
+  {
+    image: asset("Arcademachine.jpg"),
+    title: "Scrumshowdown",
 
-      description:
-        "An arcade cabinet commissioned by Northampton County Council for the Women's Rugby World Cup 2025. Designed for different age groups and featuring four mini-games. I was Lead Designer and Director, responsible for the overall creative direction and design decisions.",
+    description:
+      "An arcade cabinet commissioned by Northampton County Council for the Women's Rugby World Cup 2025. Designed for different age groups and featuring four mini-games. I was Lead Designer and Director, responsible for the overall creative direction and design decisions.",
 
-      gallery: [
-        "/MM.png",
-        "/scrum.png",
-        "/Koff.png",
-        "/Stadium.png",
-        "/T.png",
-        "/CC.png",
-        "/Catching.png"
-      ]
-    },
-
-
-    {
-      image: "/FearofthedarkMM.png",
-      title: "Fear of the Dark",
-
-      description: (
-
-        <>
-          A psychological horror experience where the main
-          character faces their deepest fears.
-
-          <br /><br />
-
-          Originally created as a Twine prototype and later
-          developed in Unreal Engine 5. I created the 3D
-          models, UI and gameplay systems for this solo
-          university project.
-
-          <br /><br />
-
-          <a
-            href="https://elisa-pojaga.itch.io/fear-of-the-dark"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Project
-          </a>
-
-        </>
-
-      ),
-
-      video: "/FearOfTheDarkPlaythrough.mp4",
-
-      gallery: [
-        "/Screenshot2026-07-20-124240.png",
-        "/Allpinsconnected.png"
-      ]
-
-    },
+    gallery: [
+      asset("MM.png"),
+      asset("scrum.png"),
+      asset("Koff.png"),
+      asset("Stadium.png"),
+      asset("T.png"),
+      asset("CC.png"),
+      asset("Catching.png")
+    ]
+  },
 
 
-    {
-      image: "/4.png",
-      title: "Shadows of Castle Everdale",
+  {
+    image: asset("Fearofthe darkMM.png"),
+    title: "Fear of the Dark",
 
-      description:
-        "A point-and-click adventure game set inside a mysterious castle. Players solve puzzles and uncover secrets to progress through the story. Developed in Unity as my Final Major Project.",
+    description: (
+      <>
+        A psychological horror experience where the main
+        character faces their deepest fears.
 
-      video: "/SCEgameplayvideo.mp4"
+        <br /><br />
 
-    },
+        Originally created as a Twine prototype and later
+        developed in Unreal Engine 5. I created the 3D
+        models, UI and gameplay systems for this solo
+        university project.
+
+        <br /><br />
+
+        <a
+          href="https://elisa-pojaga.itch.io/fear-of-the-dark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Project
+        </a>
+      </>
+    ),
+
+    video: asset("FearOfTheDarkPlaythrough.mp4"),
+
+    gallery: [
+      asset("Screenshot 2026-07-20 124240.png"),
+      asset("All pins connected.png"),
+      asset("Screenshot 2026-07-20 124350.png")
+    ]
+  },
 
 
-    {
-      image: "/cover.png",
-      title: "Call Unknown",
+  {
+    image: asset("4.png"),
+    title: "Shadows of Castle Everdale",
 
-      description: (
+    description:
+      "A point-and-click adventure game set inside a mysterious castle. Players solve puzzles and uncover secrets to progress through the story. Developed in Unity as my Final Major Project.",
 
-        <>
-          A dark choice-based narrative game created in Twine,
-          where players experience a personal journey of
-          self-discovery.
+    video: asset("SCEgameplayvideo.mp4")
+  },
 
-          <br /><br />
 
-          <a
-            href="https://elisa-pojaga.itch.io/callunknown"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Project
-          </a>
+  {
+    image: asset("cover.png"),
+    title: "Call Unknown",
 
-        </>
+    description: (
+      <>
+        A dark choice-based narrative game created in Twine,
+        where players experience a personal journey of
+        self-discovery.
 
-      ),
+        <br /><br />
 
-      gallery: [
-        "/Screenshot2026-07-20-135216.png"
-      ]
+        <a
+          href="https://elisa-pojaga.itch.io/callunknown"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Project
+        </a>
+      </>
+    ),
 
-    }
+    gallery: [
+      asset("Screenshot 2026-07-20 135216.png")
+    ]
+  }
 
-  ];
+];
 
 
 
@@ -254,8 +247,7 @@ function App() {
 
           <img
 
-            src="/Screenshot2025-02-06-134638.png"
-
+          src={asset("Screenshot 2025-02-06 134638.png")}
             alt="Elisa Pojaga"
 
           />
@@ -394,7 +386,7 @@ function App() {
 
           <img
 
-            src="/Echoesinthenight.png"
+           src={asset("Echoesinthenight.png")}
 
             alt="Echoes in the Night"
 
